@@ -1,0 +1,8 @@
+- name: installing nginx server and setting up web frontend
+  hosts: web
+  become: yes
+  tasks:
+  - name: Install nginx
+    ansible.builtin.yum:
+      name: nginx
+      state: installed

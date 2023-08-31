@@ -3,3 +3,6 @@ mongodb.jdevops.cloud
 
 [web]
 web.jdevops.cloud
+
+[catalogue]
+catalogue.jdevops.cloud

@@ -12,3 +12,26 @@
       name: nginx
       state: started
       enabled: yes
+  
+  - name: Recursively remove directory
+    ansible.builtin.file:
+      path: usr/share/nginx/html
+      state: absent
+
+  - name: create html directory
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+
+  - name: download the frontend content
+    ansible.builtin.get_url:
+      url: https://roboshop-builds.s3.amazonaws.com/web.zip
+      dest: /tmp
+  
+  - name: unarchive the downloaded zip file
+    ansible.bulitin.unarchive:
+      src: /tmp/web.zip
+      dest: /usr/share/nginx/html
+      remote_src: yes
+
+  

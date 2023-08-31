@@ -29,7 +29,7 @@
       dest: /tmp
   
   - name: unarchive the downloaded zip file
-    ansible.bulitin.unarchive:
+    ansible.builtin.unarchive:
       src: /tmp/web.zip
       dest: /usr/share/nginx/html
       remote_src: yes
